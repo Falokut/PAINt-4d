@@ -1,0 +1,20 @@
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\bin\Debug\Paint.pdb
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\obj\Debug\Paint.csproj.AssemblyReference.cache
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\obj\Debug\Paint.Form1.resources
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\obj\Debug\Paint.Properties.Resources.resources
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.cache
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\obj\Debug\Paint.csproj.CoreCompileInputs.cache
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\obj\Debug\Paint.pdb
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\bin\Debug\Paint.exe.config
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\bin\Debug\Paint.exe
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\obj\Debug\Paint.exe
+H:\ПРАКТИКА 01.01\Тема7\Paint\Paint\bin\Debug\Paint.exe.config
+H:\ПРАКТИКА 01.01\Тема7\Paint\Paint\bin\Debug\Paint.exe
+H:\ПРАКТИКА 01.01\Тема7\Paint\Paint\bin\Debug\Paint.pdb
+H:\ПРАКТИКА 01.01\Тема7\Paint\Paint\obj\Debug\Paint.csproj.AssemblyReference.cache
+H:\ПРАКТИКА 01.01\Тема7\Paint\Paint\obj\Debug\Paint.Form1.resources
+H:\ПРАКТИКА 01.01\Тема7\Paint\Paint\obj\Debug\Paint.Properties.Resources.resources
+H:\ПРАКТИКА 01.01\Тема7\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.cache
+H:\ПРАКТИКА 01.01\Тема7\Paint\Paint\obj\Debug\Paint.csproj.CoreCompileInputs.cache
+H:\ПРАКТИКА 01.01\Тема7\Paint\Paint\obj\Debug\Paint.exe
+H:\ПРАКТИКА 01.01\Тема7\Paint\Paint\obj\Debug\Paint.pdb

@@ -1,0 +1,10 @@
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\obj\Release\Paint.csproj.AssemblyReference.cache
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\obj\Release\Paint.Form1.resources
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\obj\Release\Paint.Properties.Resources.resources
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\obj\Release\Paint.csproj.GenerateResource.cache
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\obj\Release\Paint.csproj.CoreCompileInputs.cache
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\bin\Release\Paint.exe.config
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\bin\Release\Paint.exe
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\bin\Release\Paint.pdb
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\obj\Release\Paint.exe
+F:\Программирование\МУСОР_УП01.01\Paint\Paint\obj\Release\Paint.pdb
