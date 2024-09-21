@@ -68,7 +68,6 @@
     </Compile>
     <Compile Include="Shapes\Line.cs" />
     <Compile Include="Service\Paint.cs" />
-    <Compile Include="Service\PaintHistory.cs" />
     <Compile Include="Components\PaintModeToolStripButton.cs">
       <SubType>Component</SubType>
     </Compile>

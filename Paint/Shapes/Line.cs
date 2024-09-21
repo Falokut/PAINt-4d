@@ -34,32 +34,13 @@ namespace Paint
             return new System.Drawing.Rectangle(minX, minY, maxX- minX, maxY- minY);
         }
 
-        protected override System.Drawing.Rectangle DrawShapeOutline(Graphics g, Pen p)
+        protected override void DrawShapeOutline(Graphics g, Pen p)
         {
             g.DrawLine(p, start,end);
-            return GetBounds();
         }
         protected override Point GetCenter()
         {
             return new Point((start.X + end.X)/2, (start.Y + end.Y) / 2);
         }
-
-
-        public override void Move(Point m)
-        {
-            start.X += m.X;
-            start.Y += m.Y;
-            end.X += m.X;
-            end.Y += m.Y;
-        }
-
-        public override void MoveTo(Point target)
-        {
-            var bounds = GetBounds();
-            start = new Point(target.X, target.Y);
-            end = new Point(start.X + bounds.Width, target.Y + bounds.Height);
-        }
-
-        public override bool IsOverlapped(Point p) { return GetBounds().Contains(p); }
     }
 }

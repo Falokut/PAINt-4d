@@ -39,10 +39,9 @@ namespace Paint
             return GetRectangle(p1, p2);
         }
 
-        protected override System.Drawing.Rectangle DrawShapeOutline(Graphics g, Pen p)
+        protected override void DrawShapeOutline(Graphics g, Pen p)
         {
             g.DrawEllipse(p, rect);
-            return rect;
         }
 
         protected override void DrawShape(Graphics g, Brush b)
@@ -54,23 +53,5 @@ namespace Paint
         {
             return new Point(rect.Left + (rect.Width / 2), rect.Top + (rect.Height / 2));
         }
-
-        public override void Move(Point m)
-        {
-            p1.X += m.X;
-            p1.Y += m.Y;
-            p2.X += m.X;
-            p2.Y += m.Y;
-            rect = GetRectangle();
-        }
-
-        public override void MoveTo(Point target)
-        {
-            rect.Location = target;
-            p1 = new Point(target.X, target.Y);
-            p2 = new Point(p1.X + rect.Width, rect.Location.Y + rect.Height);
-        }
-
-        public override bool IsOverlapped(Point p) { return GetRectangle().Contains(p); }
     }
 }

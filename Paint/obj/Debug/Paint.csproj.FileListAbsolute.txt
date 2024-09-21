@@ -18,3 +18,13 @@ H:\ПРАКТИКА 01.01\Тема7\Paint\Paint\obj\Debug\Paint.csproj.GenerateR
 H:\ПРАКТИКА 01.01\Тема7\Paint\Paint\obj\Debug\Paint.csproj.CoreCompileInputs.cache
 H:\ПРАКТИКА 01.01\Тема7\Paint\Paint\obj\Debug\Paint.exe
 H:\ПРАКТИКА 01.01\Тема7\Paint\Paint\obj\Debug\Paint.pdb
+D:\Курсач РПМ\PAINt-4d\Paint\bin\Debug\Paint.exe.config
+D:\Курсач РПМ\PAINt-4d\Paint\bin\Debug\Paint.exe
+D:\Курсач РПМ\PAINt-4d\Paint\bin\Debug\Paint.pdb
+D:\Курсач РПМ\PAINt-4d\Paint\obj\Debug\Paint.csproj.AssemblyReference.cache
+D:\Курсач РПМ\PAINt-4d\Paint\obj\Debug\Paint.Form1.resources
+D:\Курсач РПМ\PAINt-4d\Paint\obj\Debug\Paint.Properties.Resources.resources
+D:\Курсач РПМ\PAINt-4d\Paint\obj\Debug\Paint.csproj.GenerateResource.cache
+D:\Курсач РПМ\PAINt-4d\Paint\obj\Debug\Paint.csproj.CoreCompileInputs.cache
+D:\Курсач РПМ\PAINt-4d\Paint\obj\Debug\Paint.exe
+D:\Курсач РПМ\PAINt-4d\Paint\obj\Debug\Paint.pdb

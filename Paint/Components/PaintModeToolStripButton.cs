@@ -64,10 +64,6 @@ namespace Paint
         {
             switch (mode)
             {
-                case PaintMode.Select:
-                    return Properties.Resources.icons8_курсор_рука_30;
-                case PaintMode.Move:
-                    return Properties.Resources.icons8_перемещение_30;
                 case PaintMode.Draw:
                     return Properties.Resources.icons8_щетка_30;
                 case PaintMode.Idle:

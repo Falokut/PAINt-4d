@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Service;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Paint
 {
@@ -17,24 +11,32 @@ namespace Paint
         public Form1()
         {
             InitializeComponent();
+            UpdateSize();
             KeyPreview = true;
             InitPaint();
-            InitMovement();
 
             modes = new Dictionary<Keys, PaintMode>();
             modes[Keys.F1] = PaintMode.Idle;
             modes[Keys.F2] = PaintMode.Draw;
-            modes[Keys.F3] = PaintMode.Select;
-            modes[Keys.F4] = PaintMode.Move;
             modes[Keys.F6] = PaintMode.Fill;
-
-            this.drawPanel.MouseWheel += new System.Windows.Forms.MouseEventHandler(RotateSelected);
         }
 
         #region init
+        void UpdateSize()
+        {
+            bitmap = new Bitmap(drawPanel.Width, drawPanel.Height);
+            g = Graphics.FromImage(bitmap);
+            temp_bitmap = new Bitmap(drawPanel.Width, drawPanel.Height);
+            temp_g = Graphics.FromImage(temp_bitmap);
+            drawPanel.Image = bitmap;
+            service = new Service.Paint();
+        }
+
+        Graphics g;
+        Graphics temp_g;
+        Bitmap temp_bitmap;
         void InitPaint()
         {
-            service = new Service.Paint();
             service.Color = Color.Black;
             service.Mode = PaintMode.Idle;
             paintColorPickerToolStrip1.CurrentColor = service.Color;
@@ -49,30 +51,19 @@ namespace Paint
             paintShapeToolStripButton3.ShapeShanged += ShapeTypeChanged;
             paintShapeToolStripButton4.ShapeShanged += ShapeTypeChanged;
 
-            paintModeToolStripButton1.ModeChanged += ModeChanged;
-            paintModeToolStripButton2.ModeChanged += ModeChanged;
             paintModeToolStripButton3.ModeChanged += ModeChanged;
-        }
-        void InitMovement()
-        {
-            movement = new Dictionary<Keys, Point>();
-
-            movement[Keys.Left] = new Point(-1, 0);
-            movement[Keys.Right] = new Point(1, 0);
-            movement[Keys.Up] = new Point(0, -1);
-            movement[Keys.Down] = new Point(0, 1);
         }
         #endregion
         #region events
         void ColorChanged(Color color)
         {
             service.Color = color;
-            if (service.Mode == PaintMode.Select || service.Mode == PaintMode.Draw) RefreshDrawZone();
+            if (service.Mode == PaintMode.Draw) RefreshDrawZone();
         }
         void BrushSizeChanged(int newSize)
         {
             service.LineThickness = (UInt16)newSize;
-            if (service.Mode == PaintMode.Select || service.Mode == PaintMode.Draw) RefreshDrawZone();
+            if (service.Mode == PaintMode.Draw) RefreshDrawZone();
         }
         void ShapeTypeChanged(ShapeType type)
         {
@@ -85,19 +76,12 @@ namespace Paint
         {
             if (modes.TryGetValue(e.KeyCode, out PaintMode mode) && service.Mode != mode)
                 ModeChanged(mode);
-
         }
         void ModeChanged(PaintMode mode)
         {
             service.Mode = mode;
             switch (mode)
             {
-                case PaintMode.Select:
-                    Cursor = System.Windows.Forms.Cursors.Hand;
-                    break;
-                case PaintMode.Move:
-                    Cursor = System.Windows.Forms.Cursors.SizeAll;
-                    break;
                 case PaintMode.Draw:
                     Cursor = System.Windows.Forms.Cursors.Cross;
                     break;
@@ -112,18 +96,20 @@ namespace Paint
         #endregion
         #region draw
         Service.Paint service;
+        Bitmap bitmap;
         bool mouseDown;
-        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+
+        void ReinitTempGraphics()
         {
-            e.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            service.Draw(e.Graphics);
+            temp_bitmap.Dispose();
+            temp_g.Dispose();
+            temp_bitmap = (Bitmap)bitmap.Clone();
+            temp_g = Graphics.FromImage(temp_bitmap);
         }
 
         #endregion
 
         #region KeyEvents
-        Dictionary<Keys, Point> movement;
-
         bool cursorOnPaintZone = false;
         private void drawPanel_MouseLeave(object sender, EventArgs e)
         {
@@ -138,34 +124,14 @@ namespace Paint
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             if (!cursorOnPaintZone) return;
-            if (e.Button == MouseButtons.Middle)
-            {
-                service.FlipSelected();
-                RefreshDrawZone();
-                return;
-            }
-
 
             switch (service.Mode)
             {
-                case PaintMode.Select:
-                    service.StartSelectShape(e.Location);
-                    break;
-                case PaintMode.Move:
-                    if (!service.IsSelected())
-                        service.StartSelectShape(e.Location); 
-                    else service.MoveSelectedTo(e.Location);
-                    break;
                 case PaintMode.Draw:
                     if (e.Button != MouseButtons.Left) return;
                     break;
                 case PaintMode.Fill:
-                    if (service.Intercest(e.Location))
-                    {
-                        service.StartSelectShape(e.Location);
-                        service.FillSelectedShape();
-                        service.EndSelectShape();
-                    }
+                    service.Fill(e.Location);
                     break;
             }
             RefreshDrawZone();
@@ -175,94 +141,31 @@ namespace Paint
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             if (!mouseDown || !cursorOnPaintZone) return;
-            switch (service.Mode)
+            if (service.Mode == PaintMode.Draw)
             {
-                case PaintMode.Move:
-                    service.MoveSelectedTo(e.Location);
-                    break;
-                case PaintMode.Draw:
-                    service.ProcessDrawShape(e.Location);
-                    break;
+                ReinitTempGraphics();
+                service.ProcessDrawShape(e.Location, temp_g);
+                RefreshTempDrawZone();
             }
             lastMousePosition = e.Location;
-            RefreshDrawZone();
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             if (!mouseDown || !cursorOnPaintZone) return;
-            switch (service.Mode)
+            if (service.Mode == PaintMode.Draw)
             {
-                case PaintMode.Draw:
-                    service.EndDrawShape();
-                    break;
-                case PaintMode.Move:
-                    service.EndMoveSelectedShape();
-                    break;
+                service.EndDrawShape(g,e.Location);
+                RefreshDrawZone();
             }
             mouseDown = false;
-            RefreshDrawZone();
-        }
-
-        private void Rollback()
-        {
-            service.Rollback();
-            RefreshDrawZone();
-        }
-
-
-        Tuple<Keys, bool> ProcessMoveKey(KeyEventArgs e)
-        {
-            bool bShiftDown = (e.KeyData & Keys.Shift) != 0;
-            if (bShiftDown)
-                return new Tuple<Keys, bool>(e.KeyData & ~Keys.Shift, true);
-
-            return new Tuple<Keys, bool>(e.KeyData, false);
+   
         }
 
         Point lastMousePosition;
-        void ProcessCopyPaste(KeyEventArgs e)
-        {
-            if ((e.KeyData & Keys.Control) == 0) return;
-            var keyData = e.KeyData & ~Keys.Control;
-
-            switch (keyData)
-            {
-                case Keys.C:
-                    service.CopySelectedShape();
-                    break;
-                case Keys.X:
-                    service.CutSelectedShape();
-                    RefreshDrawZone();
-                    break;
-                case Keys.V:
-                    service.PasteCopiedShape(lastMousePosition);
-                    RefreshDrawZone();
-                    break;
-            }
-        }
-
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             HandleModeKey(e);
-            var keyPair = ProcessMoveKey(e);
-            if (service.Mode == PaintMode.Move && movement.TryGetValue(keyPair.Item1, out Point dir))
-            {
-                service.MoveSelectedShape(dir, keyPair.Item2);
-                RefreshDrawZone();
-            }
-            ProcessCopyPaste(e);
-
-            if (e.KeyData == (Keys.Z | Keys.Control))
-            {
-                Rollback();
-            }
-
-            if (e.KeyData == Keys.Delete && service.IsSelected())
-            {
-                service.DeleteSelectedShape();
-                RefreshDrawZone();
-            }
             if (e.KeyData == Keys.F5)
             {
                 RefreshDrawZone();
@@ -274,41 +177,28 @@ namespace Paint
             }
 
         }
-
-        private void Form1_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (service.Mode == PaintMode.Move &&
-                (e.KeyData & (Keys.Right | Keys.Left | Keys.Up | Keys.Down)) != 0)
-            {
-                service.EndMoveSelectedShape();
-            }
-        }
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            toolStripLabel1.Text = $"размер холста: {drawPanel.Width}x{drawPanel.Height} px";
+            toolStripLabel2.Text = $"размер холста: {drawPanel.Width}x{drawPanel.Height} px";
         }
 
         private void RefreshDrawZone()
         {
-            drawPanel.Refresh();
+            drawPanel.Image=bitmap;
         }
-
-        #region History
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void RefreshTempDrawZone()
         {
-            Rollback();
+            drawPanel.Image = temp_bitmap;
         }
 
-
-        #endregion
         #region Save
         void SavePaint()
         {
             var tmp = Cursor;
             Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            if (!service.Save())
+            if (!service.Save(bitmap))
             {
                 SavePaintAs();
             }
@@ -322,24 +212,25 @@ namespace Paint
 
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.CheckPathExists = true;
-            dialog.Filter = "image files (*.PAIN)|*.PAIN|All files (*.*)|*.*";
+            dialog.Filter = "image files (*.png)|*.png|All files (*.*)|*.*";
             dialog.RestoreDirectory = true;
             dialog.InitialDirectory = "C:\\Users\\user\\Downloads";
-            if (dialog.ShowDialog() == DialogResult.OK) service.SaveAs(dialog.FileName);
-
+            if (dialog.ShowDialog() == DialogResult.OK) service.SaveAs(dialog.FileName,bitmap);
             Cursor = tmp;
         }
 
         void LoadPaint()
         {
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "image files (*.PAIN)|*.PAIN|All files (*.*)|*.*";
+            dialog.Filter = "image files (*.png)|*.png|All files (*.*)|*.*";
             dialog.RestoreDirectory = true;
             dialog.CheckPathExists = true;
             dialog.InitialDirectory = "C:\\Users\\user\\Downloads";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                service.Load(dialog.FileName);
+                bitmap = service.Load(dialog.FileName);
+                g = Graphics.FromImage(bitmap);
+                toolStripLabel2.Text = $"размер холста: {drawPanel.Width}x{drawPanel.Height} px";
                 RefreshDrawZone();
             }
         }
@@ -360,17 +251,10 @@ namespace Paint
         }
         #endregion
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        private void Form1_ResizeEnd(object sender, EventArgs e)
         {
-            service.RotateSelected(10.0f);
-            RefreshDrawZone();
-        }
-
-        private void RotateSelected(object sender,MouseEventArgs e)
-        {
-            if (service.Mode != PaintMode.Select) return;
-            service.RotateSelected(1.0f*e.Delta/ SystemInformation.MouseWheelScrollDelta);
-            RefreshDrawZone();
+            toolStripLabel2.Text = $"размер холста: {drawPanel.Width}x{drawPanel.Height} px";
+            // service.SetCurrentSize(drawPanel.Size);
         }
     }
 }

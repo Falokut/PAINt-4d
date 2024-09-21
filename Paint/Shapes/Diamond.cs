@@ -61,33 +61,15 @@ namespace Paint.Shapes
             return new Point[] { left, top, right, bottom, left };
         }
 
-        protected override System.Drawing.Rectangle DrawShapeOutline(Graphics g, Pen p)
+        protected override void DrawShapeOutline(Graphics g, Pen p)
         {
             var path = new GraphicsPath();
             path.AddLines(getDiamondPoints());
             g.DrawPath(p,path);
-            return GetBounds();
         }
         protected override Point GetCenter()
         {
             return new Point((p1.X + p2.X) / 2, (p1.Y + p2.Y) / 2);
         }
-
-        public override void Move(Point m)
-        {
-            p1.X += m.X;
-            p1.Y += m.Y;
-            p2.X += m.X;
-            p2.Y += m.Y;
-        }
-
-        public override void MoveTo(Point target)
-        {
-            var bounds = GetBounds();
-            p1 = new Point(target.X, target.Y);
-            p2 = new Point(p1.X + bounds.Width, target.Y + bounds.Height);
-        }
-
-        public override bool IsOverlapped(Point p) { return GetBounds().Contains(p); }
     }
 }
