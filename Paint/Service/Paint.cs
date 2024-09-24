@@ -125,9 +125,55 @@ namespace Service
             return new Tuple<System.Drawing.Point, System.Drawing.Point>(p1, p2);
         }
 
-        public void Fill(Point location)
+        public void Fill(Point location, Graphics g, Bitmap bitmap)
         {
-            // c.
+            Color targetColor = bitmap.GetPixel(location.X, location.Y);
+
+            if (targetColor.ToArgb() == Color.ToArgb()) return;
+
+            BitmapData bmpData = bitmap.LockBits(new System.Drawing.Rectangle(0, 0, bitmap.Width, bitmap.Height),
+                ImageLockMode.ReadWrite, bitmap.PixelFormat);
+
+            int bytesPerPixel = Image.GetPixelFormatSize(bitmap.PixelFormat) / 8;
+            int byteCount = bmpData.Stride * bitmap.Height;
+            byte[] pixels = new byte[byteCount];
+
+            System.Runtime.InteropServices.Marshal.Copy(bmpData.Scan0, pixels, 0, byteCount);
+
+            Stack<Point> pixelsStack = new Stack<Point>();
+            pixelsStack.Push(location);
+
+            bool[,] visited = new bool[bitmap.Width, bitmap.Height];
+
+            while (pixelsStack.Count > 0)
+            {
+                Point pt = pixelsStack.Pop();
+
+                if (pt.X < 0 || pt.X >= bitmap.Width || pt.Y < 0 || pt.Y >= bitmap.Height || visited[pt.X, pt.Y])
+                    continue;
+
+                int pixelIndex = (pt.Y * bmpData.Stride) + (pt.X * bytesPerPixel);
+
+                Color currentColor = Color.FromArgb(pixels[pixelIndex + 3], pixels[pixelIndex + 2], pixels[pixelIndex + 1], pixels[pixelIndex]);
+
+                if (currentColor != targetColor)
+                    continue;
+
+                pixels[pixelIndex] = Color.B;
+                pixels[pixelIndex + 1] = Color.G;
+                pixels[pixelIndex + 2] = Color.R;
+                pixels[pixelIndex + 3] = Color.A;
+                visited[pt.X, pt.Y] = true;
+
+                pixelsStack.Push(new Point(pt.X + 1, pt.Y)); 
+                pixelsStack.Push(new Point(pt.X - 1, pt.Y)); 
+                pixelsStack.Push(new Point(pt.X, pt.Y + 1)); 
+                pixelsStack.Push(new Point(pt.X, pt.Y - 1)); 
+            }
+
+            System.Runtime.InteropServices.Marshal.Copy(pixels, 0, bmpData.Scan0, bytesPerPixel * bitmap.Width * bitmap.Height);
+            bitmap.UnlockBits(bmpData);
+
         }
         ShapeType GetShapeType()
         {
@@ -157,7 +203,7 @@ namespace Service
             drawShape.Draw(g);
         }
 
-        public void EndDrawShape(Graphics g,Point curentPoint)
+        public void EndDrawShape(Graphics g, Point curentPoint)
         {
             if (drawShape == null) return;
             drawShape = DrawShape(curentPoint);

@@ -131,7 +131,7 @@ namespace Paint
                     if (e.Button != MouseButtons.Left) return;
                     break;
                 case PaintMode.Fill:
-                    service.Fill(e.Location);
+                    service.Fill(e.Location, g, bitmap);
                     break;
             }
             RefreshDrawZone();
@@ -155,11 +155,11 @@ namespace Paint
             if (!mouseDown || !cursorOnPaintZone) return;
             if (service.Mode == PaintMode.Draw)
             {
-                service.EndDrawShape(g,e.Location);
+                service.EndDrawShape(g, e.Location);
                 RefreshDrawZone();
             }
             mouseDown = false;
-   
+
         }
 
         Point lastMousePosition;
@@ -186,7 +186,7 @@ namespace Paint
 
         private void RefreshDrawZone()
         {
-            drawPanel.Image=bitmap;
+            drawPanel.Image = bitmap;
         }
         private void RefreshTempDrawZone()
         {
@@ -215,7 +215,7 @@ namespace Paint
             dialog.Filter = "image files (*.png)|*.png|All files (*.*)|*.*";
             dialog.RestoreDirectory = true;
             dialog.InitialDirectory = "C:\\Users\\user\\Downloads";
-            if (dialog.ShowDialog() == DialogResult.OK) service.SaveAs(dialog.FileName,bitmap);
+            if (dialog.ShowDialog() == DialogResult.OK) service.SaveAs(dialog.FileName, bitmap);
             Cursor = tmp;
         }
 
