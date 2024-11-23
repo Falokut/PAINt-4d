@@ -9,7 +9,7 @@ using System.Resources;
 using Paint.Properties;
 using System.Windows.Forms.Design;
 
-namespace Paint
+namespace Paint.Components
 {
     [ToolStripItemDesignerAvailability(ToolStripItemDesignerAvailability.All)]
     public class PaintBrushSizeToolStripDropdown : ToolStripDropDownButton

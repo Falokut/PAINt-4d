@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using Service;
+using Paint.Service;
 
 namespace Paint
 {
@@ -12,6 +12,7 @@ namespace Paint
         {
             InitializeComponent();
             UpdateSize();
+            paintService = new Service.Paint();
             KeyPreview = true;
             InitPaint();
 
@@ -26,10 +27,10 @@ namespace Paint
         {
             bitmap = new Bitmap(drawPanel.Width, drawPanel.Height);
             g = Graphics.FromImage(bitmap);
+            g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             temp_bitmap = new Bitmap(drawPanel.Width, drawPanel.Height);
             temp_g = Graphics.FromImage(temp_bitmap);
             drawPanel.Image = bitmap;
-            service = new Service.Paint();
         }
 
         Graphics g;
@@ -37,12 +38,12 @@ namespace Paint
         Bitmap temp_bitmap;
         void InitPaint()
         {
-            service.Color = Color.Black;
-            service.Mode = PaintMode.Idle;
-            paintColorPickerToolStrip1.CurrentColor = service.Color;
-            service.LineThickness = 1;
-            service.shapeType = ShapeType.Line;
-
+            paintService.Color = Color.Black;
+            paintService.Mode = PaintMode.Idle;
+            paintColorPickerToolStrip1.CurrentColor = paintService.Color;
+            paintService.LineThickness = 1;
+            paintService.shapeType = ShapeType.Line;
+            paintService.OutlineDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             paintColorPickerToolStrip1.OnColorChanged += ColorChanged;
             paintBrushSizeToolStripDropdown1.BrushChangedDelegate += BrushSizeChanged;
 
@@ -50,52 +51,70 @@ namespace Paint
             paintShapeToolStripButton2.ShapeShanged += ShapeTypeChanged;
             paintShapeToolStripButton3.ShapeShanged += ShapeTypeChanged;
             paintShapeToolStripButton4.ShapeShanged += ShapeTypeChanged;
+            paintShapeToolStripButton5.ShapeShanged += ShapeTypeChanged;
+            paintShapeToolStripButton6.ShapeShanged += ShapeTypeChanged;
+            paintShapeToolStripButton7.ShapeShanged += ShapeTypeChanged;
+            paintShapeToolStripButton8.ShapeShanged += ShapeTypeChanged;
 
             paintModeToolStripButton3.ModeChanged += ModeChanged;
+
+            paintOutlineDashStypeToolStripButton1.OutlineStyleChanged += OutlineStyleChanged;
+            paintOutlineDashStypeToolStripButton2.OutlineStyleChanged += OutlineStyleChanged;
+            paintOutlineDashStypeToolStripButton3.OutlineStyleChanged += OutlineStyleChanged;
         }
         #endregion
         #region events
         void ColorChanged(Color color)
         {
-            service.Color = color;
-            if (service.Mode == PaintMode.Draw) RefreshDrawZone();
+            paintService.Color = color;
+            if (paintService.Mode == PaintMode.Draw) RefreshDrawZone();
+        }
+        void OutlineStyleChanged(System.Drawing.Drawing2D.DashStyle style)
+        {
+            paintService.OutlineDashStyle = style;
+            if (paintService.Mode == PaintMode.Draw) RefreshDrawZone();
         }
         void BrushSizeChanged(int newSize)
         {
-            service.LineThickness = (UInt16)newSize;
-            if (service.Mode == PaintMode.Draw) RefreshDrawZone();
+            paintService.LineThickness = (UInt16)newSize;
+            if (paintService.Mode == PaintMode.Draw) RefreshDrawZone();
         }
         void ShapeTypeChanged(ShapeType type)
         {
-            service.shapeType = type;
+            paintService.shapeType = type;
             ModeChanged(PaintMode.Draw);
         }
 
         Dictionary<Keys, PaintMode> modes;
         void HandleModeKey(KeyEventArgs e)
         {
-            if (modes.TryGetValue(e.KeyCode, out PaintMode mode) && service.Mode != mode)
+            if (modes.TryGetValue(e.KeyCode, out PaintMode mode) && paintService.Mode != mode)
                 ModeChanged(mode);
         }
         void ModeChanged(PaintMode mode)
         {
-            service.Mode = mode;
+            paintService.Mode = mode;
             switch (mode)
             {
                 case PaintMode.Draw:
                     Cursor = System.Windows.Forms.Cursors.Cross;
                     break;
-                case PaintMode.Idle:
-                    Cursor = System.Windows.Forms.Cursors.Default;
-                    break;
                 case PaintMode.Fill:
                     Cursor = new Cursor(Properties.Resources.icons8_цвет_заливки_241.Handle);
                     break;
+                default:
+                    Cursor = System.Windows.Forms.Cursors.Default;
+                    break;
             }
+        }
+        private void Form1_ResizeEnd(object sender, EventArgs e)
+        {
+            toolStripLabel2.Text = $"размер холста: {drawPanel.Width}x{drawPanel.Height} px";
+            //paintService.(drawPanel.Size);
         }
         #endregion
         #region draw
-        Service.Paint service;
+        Service.Paint paintService;
         Bitmap bitmap;
         bool mouseDown;
 
@@ -105,10 +124,10 @@ namespace Paint
             temp_g.Dispose();
             temp_bitmap = (Bitmap)bitmap.Clone();
             temp_g = Graphics.FromImage(temp_bitmap);
+            temp_g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
         }
 
         #endregion
-
         #region KeyEvents
         bool cursorOnPaintZone = false;
         private void drawPanel_MouseLeave(object sender, EventArgs e)
@@ -125,13 +144,10 @@ namespace Paint
         {
             if (!cursorOnPaintZone) return;
 
-            switch (service.Mode)
+            switch (paintService.Mode)
             {
-                case PaintMode.Draw:
-                    if (e.Button != MouseButtons.Left) return;
-                    break;
                 case PaintMode.Fill:
-                    service.Fill(e.Location, g, bitmap);
+                    paintService.Fill(e.Location, bitmap);
                     break;
             }
             RefreshDrawZone();
@@ -141,28 +157,28 @@ namespace Paint
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             if (!mouseDown || !cursorOnPaintZone) return;
-            if (service.Mode == PaintMode.Draw)
+            switch (paintService.Mode)
             {
-                ReinitTempGraphics();
-                service.ProcessDrawShape(e.Location, temp_g);
-                RefreshTempDrawZone();
+                case PaintMode.Draw:
+                    ReinitTempGraphics();
+                    paintService.ProcessDrawShape(e.Location, temp_g);
+                    RefreshTempDrawZone();
+                    break;
             }
-            lastMousePosition = e.Location;
         }
+
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            if (!mouseDown || !cursorOnPaintZone) return;
-            if (service.Mode == PaintMode.Draw)
+            if (!cursorOnPaintZone) return;
+            if (paintService.Mode == PaintMode.Draw)
             {
-                service.EndDrawShape(g, e.Location);
+                paintService.EndDrawShape(e.Location, g);
                 RefreshDrawZone();
             }
             mouseDown = false;
-
         }
 
-        Point lastMousePosition;
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             HandleModeKey(e);
@@ -193,15 +209,13 @@ namespace Paint
             drawPanel.Image = temp_bitmap;
         }
 
-        #region Save
+        #region Save        
         void SavePaint()
         {
             var tmp = Cursor;
             Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            if (!service.Save(bitmap))
-            {
+            if (!SaveService.Save(bitmap))
                 SavePaintAs();
-            }
             Cursor = tmp;
         }
 
@@ -215,7 +229,7 @@ namespace Paint
             dialog.Filter = "image files (*.png)|*.png|All files (*.*)|*.*";
             dialog.RestoreDirectory = true;
             dialog.InitialDirectory = "C:\\Users\\user\\Downloads";
-            if (dialog.ShowDialog() == DialogResult.OK) service.SaveAs(dialog.FileName, bitmap);
+            if (dialog.ShowDialog() == DialogResult.OK) SaveService.SaveAs(dialog.FileName, bitmap);
             Cursor = tmp;
         }
 
@@ -228,8 +242,9 @@ namespace Paint
             dialog.InitialDirectory = "C:\\Users\\user\\Downloads";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                bitmap = service.Load(dialog.FileName);
+                bitmap = SaveService.Load(dialog.FileName);
                 g = Graphics.FromImage(bitmap);
+                g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
                 toolStripLabel2.Text = $"размер холста: {drawPanel.Width}x{drawPanel.Height} px";
                 RefreshDrawZone();
             }
@@ -251,10 +266,14 @@ namespace Paint
         }
         #endregion
 
-        private void Form1_ResizeEnd(object sender, EventArgs e)
+        private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            toolStripLabel2.Text = $"размер холста: {drawPanel.Width}x{drawPanel.Height} px";
-            // service.SetCurrentSize(drawPanel.Size);
+            bitmap.Dispose();
+            bitmap = new Bitmap(drawPanel.Width, drawPanel.Height);
+            drawPanel.Image = bitmap;
+            g = Graphics.FromImage(bitmap);
+            temp_bitmap = new Bitmap(drawPanel.Width, drawPanel.Height);
+            temp_g = Graphics.FromImage(temp_bitmap);
         }
     }
 }

@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using System.Drawing;
-using Service;
 
-namespace Paint
+namespace Paint.Components
 {
     [ToolboxItem(true)]
     [DefaultProperty("Shape")]
@@ -64,20 +58,24 @@ namespace Paint
         {
             switch (type)
             {
-                case ShapeType.Square:
-                    return Properties.Resources.icons8_прямоугольник_30;
                 case ShapeType.Rectangle:
                     return Properties.Resources.icons8_прямоугольник_30;
                 case ShapeType.Diamond:
                     return Properties.Resources.icons8_ромб_301;
-                case ShapeType.Circle:
-                    return Properties.Resources.icons8_круг_30;
                 case ShapeType.Elipse:
                     return Properties.Resources.icons8_круг_30;
                 case ShapeType.Line:
                     return Properties.Resources.icons8_линия_30;
+                case ShapeType.Triangle:
+                    return Properties.Resources.icons8_triangle_30;
+                case ShapeType.RightAngledTriangle:
+                    return Properties.Resources.icons8_triangle_30;
+                case ShapeType.Pentagon:
+                    return Properties.Resources.icons8_пятиугольник_30;
+                case ShapeType.Hexagon:
+                    return Properties.Resources.icons8_шестиугольник_30;
             }
-            return null;
+            return null/*Properties.Resources.empty*/;
         }
     }
 }

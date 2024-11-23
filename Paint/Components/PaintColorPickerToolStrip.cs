@@ -8,7 +8,7 @@ using System.Windows.Forms.Design;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace Paint
+namespace Paint.Components
 {
     [ToolboxItem(true)]
     [DefaultProperty("Shape")]

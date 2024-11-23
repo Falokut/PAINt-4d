@@ -63,6 +63,36 @@ namespace Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap DashDot_Outline_Style {
+            get {
+                object obj = ResourceManager.GetObject("DashDot_Outline_Style", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Dashed_Outline_Style {
+            get {
+                object obj = ResourceManager.GetObject("Dashed_Outline_Style", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_triangle_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-triangle-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap icons8_вверх_налево_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-вверх-налево-30", resourceCulture);
@@ -143,6 +173,16 @@ namespace Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap icons8_пятиугольник_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-пятиугольник-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap icons8_ромб_301 {
             get {
                 object obj = ResourceManager.GetObject("icons8_ромб_301", resourceCulture);
@@ -177,6 +217,16 @@ namespace Paint.Properties {
             get {
                 object obj = ResourceManager.GetObject("icons8_цвет_заливки_241", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_шестиугольник_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-шестиугольник-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -226,6 +276,16 @@ namespace Paint.Properties {
         public static System.Drawing.Bitmap line_8px {
             get {
                 object obj = ResourceManager.GetObject("line_8px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Solid_Outline_Style {
+            get {
+                object obj = ResourceManager.GetObject("Solid_Outline_Style", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

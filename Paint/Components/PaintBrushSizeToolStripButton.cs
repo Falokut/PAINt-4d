@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using System.Drawing;
 
-namespace Paint
+namespace Paint.Components
 {
     [ToolStripItemDesignerAvailability(ToolStripItemDesignerAvailability.All)]
     public class PaintBrushSizeToolStripButton : ToolStripButton 

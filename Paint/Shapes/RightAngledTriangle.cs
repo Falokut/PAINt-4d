@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace Paint.Shapes
 {
     [Serializable]
-    public class Rectangle : Shape
+    public class RightAngledTriangle : Shape
     {
         Point p1;
         Point p2;
 
-        public Rectangle(UInt16 lineThickness,
+        public RightAngledTriangle(UInt16 lineThickness,
             Color color,
             Point p1,
             Point p2) : base(lineThickness, color)
@@ -19,7 +20,8 @@ namespace Paint.Shapes
             rect = GetBounds();
         }
 
-        protected override System.Drawing.Rectangle GetBounds() {
+        protected override System.Drawing.Rectangle GetBounds()
+        {
             if (p2.X > p1.X && p2.Y > p1.Y) //4 quarter
                 return new System.Drawing.Rectangle(p1.X, p1.Y, p2.X - p1.X, p2.Y - p1.Y);
             if (p2.X < p1.X && p2.Y > p1.Y) //3 quarter
@@ -31,14 +33,26 @@ namespace Paint.Shapes
         }
 
         System.Drawing.Rectangle rect;
+        Point[] getTrianglePoints()
+        {
+            var left = new Point(p1.X, p1.Y);
+            var right = new Point(p2.X, p1.Y);
+            var top = new Point(p1.X, p2.Y);
+
+            return new Point[] { left, right, top, left };
+        }
 
         protected override void DrawShape(Graphics g, Brush b)
         {
-            g.FillRectangle(b, rect);
+            var path = new GraphicsPath();
+            path.AddLines(getTrianglePoints());
+            g.FillPath(b, path);
         }
         protected override void DrawShapeOutline(Graphics g, Pen p)
         {
-            g.DrawRectangle(p, rect);
+            var path = new GraphicsPath();
+            path.AddLines(getTrianglePoints());
+            g.DrawPath(p, path);
         }
     }
 }

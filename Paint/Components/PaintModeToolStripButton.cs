@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using System.Drawing;
-using Service;
 
-namespace Paint
+namespace Paint.Components
 {
     [ToolboxItem(true)]
     [DefaultProperty("Paint Mode")]

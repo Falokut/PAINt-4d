@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Paint.Shapes
 {
@@ -30,11 +26,12 @@ namespace Paint.Shapes
             }
         }
 
-        System.Drawing.Rectangle GetBounds()
+
+        protected override System.Drawing.Rectangle GetBounds()
         {
             int x = p1.X;
             int height = Math.Abs(p1.Y - p2.Y);
-            int y = Math.Min(p1.Y,p2.Y);
+            int y = Math.Min(p1.Y, p2.Y);
             int width = Math.Abs(p1.X - p2.X);
             return new System.Drawing.Rectangle(x, y, width, height);
         }
@@ -55,8 +52,8 @@ namespace Paint.Shapes
 
             int height = Math.Abs(p1.Y - p2.Y);
 
-            var top = new Point(center.X, center.Y + height/2);
-            var bottom = new Point(center.X, center.Y - height/2);
+            var top = new Point(center.X, center.Y + height / 2);
+            var bottom = new Point(center.X, center.Y - height / 2);
 
             return new Point[] { left, top, right, bottom, left };
         }
@@ -65,7 +62,7 @@ namespace Paint.Shapes
         {
             var path = new GraphicsPath();
             path.AddLines(getDiamondPoints());
-            g.DrawPath(p,path);
+            g.DrawPath(p, path);
         }
         protected override Point GetCenter()
         {
