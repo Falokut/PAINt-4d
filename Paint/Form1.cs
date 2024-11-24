@@ -20,6 +20,9 @@ namespace Paint
             modes[Keys.F1] = PaintMode.Idle;
             modes[Keys.F2] = PaintMode.Draw;
             modes[Keys.F6] = PaintMode.Fill;
+            modes[Keys.F7] = PaintMode.Pen;
+            modes[Keys.F8] = PaintMode.Eraser;
+            modes[Keys.F9] = PaintMode.Selection;
         }
 
         #region init
@@ -104,6 +107,12 @@ namespace Paint
                 case PaintMode.Fill:
                     Cursor = new Cursor(Properties.Resources.icons8_цвет_заливки_241.Handle);
                     break;
+                case PaintMode.Pen:
+                    Cursor = System.Windows.Forms.Cursors.Arrow;
+                    break;
+                case PaintMode.Selection:
+                    Cursor = System.Windows.Forms.Cursors.Hand;
+                    break;
                 default:
                     Cursor = System.Windows.Forms.Cursors.Default;
                     break;
@@ -151,6 +160,9 @@ namespace Paint
                 case PaintMode.Fill:
                     paintService.Fill(e.Location, bitmap);
                     break;
+                case PaintMode.Selection:
+                    paintService.SetStartSelectionPoint(e.Location);
+                    break;
             }
             RefreshDrawZone();
             mouseDown = true;
@@ -171,20 +183,26 @@ namespace Paint
                     RefreshDrawZone();
                     break;
                 case PaintMode.Eraser:
-                    paintService.ChangePixelColor(e.Location, g, Color.White);
+                    paintService.ChangePixelsColor(e.Location, g, Color.White);
                     RefreshDrawZone();
+                    break;
+                case PaintMode.Selection:
+                    ReinitTempGraphics();
+                    paintService.ProcessSelectArea(e.Location, temp_g);
+                    RefreshTempDrawZone();
                     break;
             }
         }
 
-
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             if (!cursorOnPaintZone) return;
-            if (paintService.Mode == PaintMode.Draw)
+            switch (paintService.Mode)
             {
-                paintService.EndDrawShape(e.Location, g);
-                RefreshDrawZone();
+                case PaintMode.Draw:
+                    paintService.EndDrawShape(e.Location, g);
+                    RefreshDrawZone();
+                    break;
             }
             mouseDown = false;
         }
@@ -202,6 +220,22 @@ namespace Paint
                 SavePaint();
             }
 
+            if (paintService.Mode == PaintMode.Selection)
+            {
+                if (e.KeyData == (Keys.C | Keys.Control))
+                {
+                    paintService.CopySelection();
+                }
+                if (e.KeyData == (Keys.X | Keys.Control))
+                {
+                    paintService.CutSelection();
+                }
+                if (e.KeyData == (Keys.V | Keys.Control))
+                {
+                    paintService.PasteSelection(drawPanel.PointToClient(Cursor.Position), bitmap);
+                    RefreshDrawZone();
+                }
+            }
         }
         #endregion
 

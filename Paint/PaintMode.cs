@@ -5,4 +5,5 @@
     Fill,
     Pen,
     Eraser,
+    Selection,
 }

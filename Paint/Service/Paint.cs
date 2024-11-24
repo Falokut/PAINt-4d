@@ -193,16 +193,16 @@ namespace Paint.Service
             currentShape.Draw(g, outlineDashStyle);
         }
 
-        public void ChangePixelColor(Point point, Graphics g, Color color)
+        public void ChangePixelsColor(Point point, Graphics g, Color color)
         {
             if (mode != PaintMode.Eraser && mode != PaintMode.Pen)
                 return;
             Brush brush = new SolidBrush(color);
-            g.FillRectangle(brush, point.X, point.Y,lineThickness,lineThickness);
+            g.FillRectangle(brush, point.X, point.Y, lineThickness, lineThickness);
         }
         public void ChangePixelsColor(Point point, Graphics g)
         {
-            ChangePixelColor(point, g, color);
+            ChangePixelsColor(point, g, color);
         }
 
         public void EndDrawShape(Point curentPoint, Graphics g)
@@ -211,6 +211,73 @@ namespace Paint.Service
             currentShape = GetShapeToDraw(curentPoint);
             currentShape.Draw(g, outlineDashStyle);
             currentShape = null;
+        }
+
+        private System.Drawing.Rectangle selectionRect;
+        private Bitmap clipboard;
+        bool cutSelection = false;
+
+        public void SelectArea(Point startPoint, Point endPoint)
+        {
+            selectionRect = new System.Drawing.Rectangle(
+                Math.Min(startPoint.X, endPoint.X),
+                Math.Min(startPoint.Y, endPoint.Y),
+                Math.Abs(endPoint.X - startPoint.X),
+                Math.Abs(endPoint.Y - startPoint.Y)
+            );
+        }
+
+        public void CopySelection()
+        {
+            cutSelection = false;
+        }
+        public void CutSelection()
+        {
+            cutSelection = true;
+        }
+
+        public void PasteSelection(Point pasteLocation, Bitmap bitmap)
+        {
+            if (selectionRect.Width == 0 || selectionRect.Height == 0) return;
+
+            clipboard = bitmap.Clone(selectionRect, bitmap.PixelFormat);
+            if (clipboard == null) return;
+
+            using (Graphics g = Graphics.FromImage(bitmap))
+            {
+                if (cutSelection) g.FillRectangle(new SolidBrush(Color.White), selectionRect);
+                g.DrawImage(clipboard, pasteLocation);
+                resetClipboard();
+            }
+        }
+
+        private void resetClipboard()
+        {
+            selectionRect = System.Drawing.Rectangle.Empty;
+            clipboard.Dispose();
+            clipboard = null;
+        }
+        public void SetStartSelectionPoint(Point point)
+        {
+            selectionRect = System.Drawing.Rectangle.Empty;
+            selectionRect.X = point.X;
+            selectionRect.Y = point.Y;
+        }
+
+        public void ProcessSelectArea(Point point, Graphics g)
+        {
+            selectionRect = new System.Drawing.Rectangle(
+                Math.Min(selectionRect.X, point.X),
+                Math.Min(selectionRect.Y, point.Y),
+                Math.Abs(point.X - selectionRect.X),
+                Math.Abs(point.Y - selectionRect.Y)
+            );
+            Pen whitePen = new Pen(Color.White, 3);
+            g.DrawRectangle(whitePen, selectionRect);
+
+            Pen blackPen = new Pen(Color.Black, 3);
+            blackPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            g.DrawRectangle(blackPen, selectionRect);
         }
     }
 }
