@@ -56,6 +56,8 @@ namespace Paint
             paintShapeToolStripButton7.ShapeShanged += ShapeTypeChanged;
             paintShapeToolStripButton8.ShapeShanged += ShapeTypeChanged;
 
+            paintModeToolStripButton1.ModeChanged += ModeChanged;
+            paintModeToolStripButton2.ModeChanged += ModeChanged;
             paintModeToolStripButton3.ModeChanged += ModeChanged;
 
             paintOutlineDashStypeToolStripButton1.OutlineStyleChanged += OutlineStyleChanged;
@@ -163,6 +165,14 @@ namespace Paint
                     ReinitTempGraphics();
                     paintService.ProcessDrawShape(e.Location, temp_g);
                     RefreshTempDrawZone();
+                    break;
+                case PaintMode.Pen:
+                    paintService.ChangePixelsColor(e.Location, g);
+                    RefreshDrawZone();
+                    break;
+                case PaintMode.Eraser:
+                    paintService.ChangePixelColor(e.Location, g, Color.White);
+                    RefreshDrawZone();
                     break;
             }
         }

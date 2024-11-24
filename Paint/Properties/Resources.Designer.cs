@@ -83,6 +83,16 @@ namespace Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap icons8_right_angled_triangle_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-right-angled-triangle-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap icons8_triangle_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-triangle-30", resourceCulture);
@@ -143,6 +153,16 @@ namespace Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap icons8_ластик_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ластик-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap icons8_линия_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8_линия_30", resourceCulture);
@@ -186,6 +206,16 @@ namespace Paint.Properties {
         public static System.Drawing.Bitmap icons8_ромб_301 {
             get {
                 object obj = ResourceManager.GetObject("icons8_ромб_301", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_ручка_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ручка-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

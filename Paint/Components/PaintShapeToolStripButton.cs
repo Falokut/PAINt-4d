@@ -69,7 +69,7 @@ namespace Paint.Components
                 case ShapeType.Triangle:
                     return Properties.Resources.icons8_triangle_30;
                 case ShapeType.RightAngledTriangle:
-                    return Properties.Resources.icons8_triangle_30;
+                    return Properties.Resources.icons8_right_angled_triangle_30;
                 case ShapeType.Pentagon:
                     return Properties.Resources.icons8_пятиугольник_30;
                 case ShapeType.Hexagon:

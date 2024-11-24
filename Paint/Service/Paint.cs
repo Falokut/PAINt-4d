@@ -193,6 +193,18 @@ namespace Paint.Service
             currentShape.Draw(g, outlineDashStyle);
         }
 
+        public void ChangePixelColor(Point point, Graphics g, Color color)
+        {
+            if (mode != PaintMode.Eraser && mode != PaintMode.Pen)
+                return;
+            Brush brush = new SolidBrush(color);
+            g.FillRectangle(brush, point.X, point.Y,lineThickness,lineThickness);
+        }
+        public void ChangePixelsColor(Point point, Graphics g)
+        {
+            ChangePixelColor(point, g, color);
+        }
+
         public void EndDrawShape(Point curentPoint, Graphics g)
         {
             if (currentShape == null) return;

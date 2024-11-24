@@ -3,68 +3,36 @@
   "WorkspaceRootPath": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\components\\paintshapetoolstripbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\components\\paintshapetoolstripbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\paint\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\shapes\\rightangledtriangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\shapes\\rightangledtriangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\shapes\\shape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\shapes\\shape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\shapes\\triangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\shapes\\triangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\service\\paint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\paint\\service\\paint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\service\\paint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\service\\save.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\service\\save.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\shapes\\rectangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\shapes\\rectangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\shapes\\pentagon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\shapes\\pentagon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\shapes\\line.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\shapes\\line.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\shapes\\hexagon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\shapes\\hexagon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\shapes\\ellipse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\shapes\\ellipse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\shapes\\diamond.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\shapes\\diamond.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\paint\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\paintmode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\paintmode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\components\\paintmodetoolstripbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\components\\paintmodetoolstripbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\shapetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\shapetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|d:\\\u043A\u0443\u0440\u0441\u0430\u0447 \u0440\u043F\u043C\\paint-4d\\paint\\components\\paintmodetoolstripbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8D621FC0-96DC-44CB-90C6-23B2A5C8931C}|Paint\\Paint.csproj|solutionrelative:paint\\components\\paintmodetoolstripbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,97 +42,83 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Resources.resx",
-              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Properties\\Resources.resx",
-              "RelativeDocumentMoniker": "Paint\\Properties\\Resources.resx",
-              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Properties\\Resources.resx",
-              "RelativeToolTip": "Paint\\Properties\\Resources.resx",
-              "ViewState": "AgIAAKcAAAAAAAAAAAAIwLkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-11-23T07:57:55.909Z",
+              "DocumentIndex": 5,
+              "Title": "ShapeType.cs",
+              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\ShapeType.cs",
+              "RelativeDocumentMoniker": "Paint\\ShapeType.cs",
+              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\ShapeType.cs",
+              "RelativeToolTip": "Paint\\ShapeType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T12:01:36.382Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Save.cs",
-              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Service\\Save.cs",
-              "RelativeDocumentMoniker": "Paint\\Service\\Save.cs",
-              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Service\\Save.cs",
-              "RelativeToolTip": "Paint\\Service\\Save.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Form1.cs",
+              "RelativeDocumentMoniker": "Paint\\Form1.cs",
+              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Form1.cs [Design]",
+              "RelativeToolTip": "Paint\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T07:55:22.991Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Paint.cs",
-              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Service\\Paint.cs",
-              "RelativeDocumentMoniker": "Paint\\Service\\Paint.cs",
-              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Service\\Paint.cs",
-              "RelativeToolTip": "Paint\\Service\\Paint.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T07:55:15.099Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-24T12:00:51.74Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Triangle.cs",
-              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Shapes\\Triangle.cs",
-              "RelativeDocumentMoniker": "Paint\\Shapes\\Triangle.cs",
-              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Shapes\\Triangle.cs",
-              "RelativeToolTip": "Paint\\Shapes\\Triangle.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Title": "PaintModeToolStripButton.cs",
+              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Components\\PaintModeToolStripButton.cs",
+              "RelativeDocumentMoniker": "Paint\\Components\\PaintModeToolStripButton.cs",
+              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Components\\PaintModeToolStripButton.cs",
+              "RelativeToolTip": "Paint\\Components\\PaintModeToolStripButton.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAEwEoAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T07:55:07.437Z",
+              "WhenOpened": "2024-11-24T11:58:17.364Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Shape.cs",
-              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Shapes\\Shape.cs",
-              "RelativeDocumentMoniker": "Paint\\Shapes\\Shape.cs",
-              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Shapes\\Shape.cs",
-              "RelativeToolTip": "Paint\\Shapes\\Shape.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Title": "PaintMode.cs",
+              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\PaintMode.cs",
+              "RelativeDocumentMoniker": "Paint\\PaintMode.cs",
+              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\PaintMode.cs",
+              "RelativeToolTip": "Paint\\PaintMode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T07:55:01.638Z",
+              "WhenOpened": "2024-11-24T11:57:58.753Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "RightAngledTriangle.cs",
-              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Shapes\\RightAngledTriangle.cs",
-              "RelativeDocumentMoniker": "Paint\\Shapes\\RightAngledTriangle.cs",
-              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Shapes\\RightAngledTriangle.cs",
-              "RelativeToolTip": "Paint\\Shapes\\RightAngledTriangle.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Paint\\Form1.Designer.cs",
+              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Form1.Designer.cs",
+              "RelativeToolTip": "Paint\\Form1.Designer.cs",
+              "ViewState": "AgIAAKAAAAAAAAAAAIAwwK8AAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T07:54:55.812Z",
+              "WhenOpened": "2024-11-23T07:49:56.555Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PaintShapeToolStripButton.cs",
-              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Components\\PaintShapeToolStripButton.cs",
-              "RelativeDocumentMoniker": "Paint\\Components\\PaintShapeToolStripButton.cs",
-              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Components\\PaintShapeToolStripButton.cs",
-              "RelativeToolTip": "Paint\\Components\\PaintShapeToolStripButton.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAcwEwAAAANAAAAAAAAAA==",
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Form1.cs",
+              "RelativeDocumentMoniker": "Paint\\Form1.cs",
+              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Form1.cs",
+              "RelativeToolTip": "Paint\\Form1.cs",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAQwKsAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T07:50:10.968Z",
+              "WhenOpened": "2024-11-23T07:49:40.282Z",
               "EditorCaption": ""
             },
             {
@@ -173,118 +127,27 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Paint.cs",
+              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Service\\Paint.cs",
+              "RelativeDocumentMoniker": "Paint\\Service\\Paint.cs",
+              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Service\\Paint.cs",
+              "RelativeToolTip": "Paint\\Service\\Paint.cs",
+              "ViewState": "AgIAALwAAAAAAAAAAAAhwMgAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T07:55:15.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Rectangle.cs",
-              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Shapes\\Rectangle.cs",
-              "RelativeDocumentMoniker": "Paint\\Shapes\\Rectangle.cs",
-              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Shapes\\Rectangle.cs",
-              "RelativeToolTip": "Paint\\Shapes\\Rectangle.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Title": "PaintModeToolStripButton.cs [Design]",
+              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Components\\PaintModeToolStripButton.cs",
+              "RelativeDocumentMoniker": "Paint\\Components\\PaintModeToolStripButton.cs",
+              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Components\\PaintModeToolStripButton.cs [Design]",
+              "RelativeToolTip": "Paint\\Components\\PaintModeToolStripButton.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T07:54:51.279Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Line.cs",
-              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Shapes\\Line.cs",
-              "RelativeDocumentMoniker": "Paint\\Shapes\\Line.cs",
-              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Shapes\\Line.cs",
-              "RelativeToolTip": "Paint\\Shapes\\Line.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T07:54:41.712Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Ellipse.cs",
-              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Shapes\\Ellipse.cs",
-              "RelativeDocumentMoniker": "Paint\\Shapes\\Ellipse.cs",
-              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Shapes\\Ellipse.cs",
-              "RelativeToolTip": "Paint\\Shapes\\Ellipse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T07:54:25.314Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Diamond.cs",
-              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Shapes\\Diamond.cs",
-              "RelativeDocumentMoniker": "Paint\\Shapes\\Diamond.cs",
-              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Shapes\\Diamond.cs",
-              "RelativeToolTip": "Paint\\Shapes\\Diamond.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T07:54:19.492Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Pentagon.cs",
-              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Shapes\\Pentagon.cs",
-              "RelativeDocumentMoniker": "Paint\\Shapes\\Pentagon.cs",
-              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Shapes\\Pentagon.cs",
-              "RelativeToolTip": "Paint\\Shapes\\Pentagon.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T07:52:37.058Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Hexagon.cs",
-              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Shapes\\Hexagon.cs",
-              "RelativeDocumentMoniker": "Paint\\Shapes\\Hexagon.cs",
-              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Shapes\\Hexagon.cs",
-              "RelativeToolTip": "Paint\\Shapes\\Hexagon.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T07:51:54.472Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "Paint\\Form1.Designer.cs",
-              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Form1.Designer.cs",
-              "RelativeToolTip": "Paint\\Form1.Designer.cs",
-              "ViewState": "AgIAAGIBAAAAAAAAAAAgwGwBAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T07:49:56.555Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Form1.cs",
-              "RelativeDocumentMoniker": "Paint\\Form1.cs",
-              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Form1.cs",
-              "RelativeToolTip": "Paint\\Form1.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowDgAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T07:49:40.282Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Form1.cs",
-              "RelativeDocumentMoniker": "Paint\\Form1.cs",
-              "ToolTip": "D:\\\u041A\u0443\u0440\u0441\u0430\u0447 \u0420\u041F\u041C\\PAINt-4d\\Paint\\Form1.cs [Design]",
-              "RelativeToolTip": "Paint\\Form1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T07:49:04.008Z",
+              "WhenOpened": "2024-11-24T11:58:15.292Z",
               "EditorCaption": " [Design]"
             }
           ]

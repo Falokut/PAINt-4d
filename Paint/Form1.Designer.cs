@@ -44,8 +44,11 @@
             this.paintShapeToolStripButton4 = new Paint.Components.PaintShapeToolStripButton();
             this.paintShapeToolStripButton5 = new Paint.Components.PaintShapeToolStripButton();
             this.paintShapeToolStripButton6 = new Paint.Components.PaintShapeToolStripButton();
+            this.paintShapeToolStripButton7 = new Paint.Components.PaintShapeToolStripButton();
+            this.paintShapeToolStripButton8 = new Paint.Components.PaintShapeToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.paintBrushSizeToolStripDropdown1 = new Paint.Components.PaintBrushSizeToolStripDropdown();
+            this.paintModeToolStripButton1 = new Paint.Components.PaintModeToolStripButton();
             this.paintModeToolStripButton3 = new Paint.Components.PaintModeToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -57,8 +60,7 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.drawPanel = new System.Windows.Forms.PictureBox();
-            this.paintShapeToolStripButton7 = new Paint.Components.PaintShapeToolStripButton();
-            this.paintShapeToolStripButton8 = new Paint.Components.PaintShapeToolStripButton();
+            this.paintModeToolStripButton2 = new Paint.Components.PaintModeToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -140,6 +142,8 @@
             this.toolStripSeparator4,
             this.paintBrushSizeToolStripDropdown1,
             this.toolStripSeparator2,
+            this.paintModeToolStripButton1,
+            this.paintModeToolStripButton2,
             this.paintModeToolStripButton3,
             this.toolStripSeparator3,
             this.toolStripDropDownButton1,
@@ -221,6 +225,26 @@
             this.paintShapeToolStripButton6.Size = new System.Drawing.Size(30, 30);
             this.paintShapeToolStripButton6.Type = ShapeType.RightAngledTriangle;
             // 
+            // paintShapeToolStripButton7
+            // 
+            this.paintShapeToolStripButton7.AutoSize = false;
+            this.paintShapeToolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.paintShapeToolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("paintShapeToolStripButton7.Image")));
+            this.paintShapeToolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.paintShapeToolStripButton7.Name = "paintShapeToolStripButton7";
+            this.paintShapeToolStripButton7.Size = new System.Drawing.Size(30, 30);
+            this.paintShapeToolStripButton7.Type = ShapeType.Pentagon;
+            // 
+            // paintShapeToolStripButton8
+            // 
+            this.paintShapeToolStripButton8.AutoSize = false;
+            this.paintShapeToolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.paintShapeToolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("paintShapeToolStripButton8.Image")));
+            this.paintShapeToolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.paintShapeToolStripButton8.Name = "paintShapeToolStripButton8";
+            this.paintShapeToolStripButton8.Size = new System.Drawing.Size(30, 30);
+            this.paintShapeToolStripButton8.Type = ShapeType.Hexagon;
+            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
@@ -241,13 +265,23 @@
             this.paintBrushSizeToolStripDropdown1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.paintBrushSizeToolStripDropdown1.ToolTipText = "ширина линий в px";
             // 
+            // paintModeToolStripButton1
+            // 
+            this.paintModeToolStripButton1.AutoSize = false;
+            this.paintModeToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.paintModeToolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("paintModeToolStripButton1.Image")));
+            this.paintModeToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.paintModeToolStripButton1.Mode = PaintMode.Pen;
+            this.paintModeToolStripButton1.Name = "paintModeToolStripButton1";
+            this.paintModeToolStripButton1.Size = new System.Drawing.Size(32, 32);
+            // 
             // paintModeToolStripButton3
             // 
             this.paintModeToolStripButton3.AutoSize = false;
             this.paintModeToolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.paintModeToolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("paintModeToolStripButton3.Image")));
             this.paintModeToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.paintModeToolStripButton3.Mode =PaintMode.Fill;
+            this.paintModeToolStripButton3.Mode = PaintMode.Fill;
             this.paintModeToolStripButton3.Name = "paintModeToolStripButton3";
             this.paintModeToolStripButton3.Size = new System.Drawing.Size(32, 32);
             // 
@@ -354,25 +388,15 @@
             this.drawPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.drawPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
-            // paintShapeToolStripButton7
+            // paintModeToolStripButton2
             // 
-            this.paintShapeToolStripButton7.AutoSize = false;
-            this.paintShapeToolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.paintShapeToolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("paintShapeToolStripButton7.Image")));
-            this.paintShapeToolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.paintShapeToolStripButton7.Name = "paintShapeToolStripButton7";
-            this.paintShapeToolStripButton7.Size = new System.Drawing.Size(30, 30);
-            this.paintShapeToolStripButton7.Type = ShapeType.Pentagon;
-            // 
-            // paintShapeToolStripButton8
-            // 
-            this.paintShapeToolStripButton8.AutoSize = false;
-            this.paintShapeToolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.paintShapeToolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("paintShapeToolStripButton8.Image")));
-            this.paintShapeToolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.paintShapeToolStripButton8.Name = "paintShapeToolStripButton8";
-            this.paintShapeToolStripButton8.Size = new System.Drawing.Size(30, 30);
-            this.paintShapeToolStripButton8.Type = ShapeType.Hexagon;
+            this.paintModeToolStripButton2.AutoSize = false;
+            this.paintModeToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.paintModeToolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("paintModeToolStripButton2.Image")));
+            this.paintModeToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.paintModeToolStripButton2.Mode = PaintMode.Eraser;
+            this.paintModeToolStripButton2.Name = "paintModeToolStripButton2";
+            this.paintModeToolStripButton2.Size = new System.Drawing.Size(32, 32);
             // 
             // Form1
             // 
@@ -436,6 +460,8 @@
         private Components.PaintShapeToolStripButton paintShapeToolStripButton6;
         private Components.PaintShapeToolStripButton paintShapeToolStripButton7;
         private Components.PaintShapeToolStripButton paintShapeToolStripButton8;
+        private Components.PaintModeToolStripButton paintModeToolStripButton1;
+        private Components.PaintModeToolStripButton paintModeToolStripButton2;
     }
 }
 

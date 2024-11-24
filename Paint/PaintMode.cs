@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Paint
+﻿public enum PaintMode
 {
-    public enum PaintMode
-    {
-        Idle,
-        Draw,
-        Fill,
-    }
+    Idle,
+    Draw,
+    Fill,
+    Pen,
+    Eraser,
 }

@@ -69,6 +69,10 @@ namespace Paint.Components
                     return Properties.Resources.icons8_курсор_30;
                 case PaintMode.Fill:
                     return Properties.Resources.icons8_цвет_заливки_24;
+                case PaintMode.Pen:
+                    return Properties.Resources.icons8_ручка_30;
+                case PaintMode.Eraser:
+                    return Properties.Resources.icons8_ластик_30;
             }
             return null;
         }
